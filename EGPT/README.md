@@ -11,7 +11,7 @@ This repository contains the code to reproduce all figures and data presented in
 
 ## Abstract
 
-[Paste the abstract of your paper here. This provides a quick scientific overview of the project for visitors.]
+Local electric fields in enzymes and molecular catalysts modulate reaction barriers, yet a compact rule that links transient electron occupancy to proton-transfer kinetics has been lacking. We derive an explicit, closed-form coefficient for barrier lowering, α = 332.063·δq/(εr·R2) kcal·mol−1 per electron, obtained from Coulombic work projected along the proton coordinate, where R is the electron–proton distance (Å), εr is the local dielectric, and δq is the transition-state displacement (Å). EGPT reframes electron occupancy as a tunable kinetic gate that leaves overall thermochemistry unchanged and provides falsifiable, actionable design rules for accelerating proton transfer in enzymes, molecular catalysts, and photo- and electrocatalytic systems.
 
 ---
 
@@ -43,8 +43,8 @@ This project requires Python 3.8 or newer.
 
 1.  **Clone the repository:**
     ```bash
-    git clone <your-repository-url>
-    cd <your-repository-name>
+    git clone <https://github.com/G0wOz1PV/NEQO>
+    cd <NEQO>
     ```
 
 2.  **(Recommended) Create and activate a virtual environment:**
@@ -89,7 +89,7 @@ This command will:
 ├── requirements.txt      # List of Python dependencies
 ├── csv/                  # Directory for generated CSV data (created by script)
 ├── png/                  # Directory for generated figures (created by script)
-├── LICENSE               # Project license file (e.g., MIT License)
+├── LICENSE               # Project license file
 └── README.md             # This file
 ```
 
