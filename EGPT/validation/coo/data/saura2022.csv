@@ -1,0 +1,2 @@
+condition_id,alpha_inferred_kcal_per_e,alpha_pred_median_kcal_per_e,alpha_pred_2p5_kcal_per_e,alpha_pred_97p5_kcal_per_e,covered_by_95pct
+0,3.4,1.402408516,0.627077069,3.579696013,TRUE
