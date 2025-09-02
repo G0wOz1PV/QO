@@ -90,6 +90,7 @@ This command will:
 ├── csv/                  # Directory for generated CSV data (created by script)
 ├── png/                  # Directory for generated figures (created by script)
 ├── LICENSE               # Project license file
+├── validation
 └── README.md             # This file
 ```
 
