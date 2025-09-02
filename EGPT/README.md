@@ -23,9 +23,13 @@ Running the main script will generate all figures from the paper. Here are some 
 | :---: | :---: |
 | <img src="png/Fig1_alpha_vs_R.png" width="400"> | <img src="png/Fig2_dG_and_rate_vs_ne.png" width="400"> |
 
-| Figure 3 | Figure 6 |
+| Figure 3 | Figure 4 |
 | :---: | :---: |
-| <img src="png/Fig3_alpha_heatmap.png" width="400"> | <img src="png/Fig6_dynamic_gating.png" width="400"> |
+| <img src="png/Fig3_alpha_heatmap.png" width="400"> | <img src="png/Fig4_orientation.png" width="400"> |
+
+| Figure 5 | Figure 6 |
+| :---: | :---: |
+| <img src="png/Fig5_multipole.png" width="400"> | <img src="png/Fig6_dynamic_gating.png" width="400"> |
 
 ---
 
@@ -91,21 +95,7 @@ This command will:
 
 ---
 
-## Citation
 
-If you use this code or our work in your research, please cite the original paper:
-
-```bibtex
-@article{Author_Journal_Year,
-  author  = {Author, A. and Coauthor, B.},
-  title   = {Title of the Paper},
-  journal = {Journal Name},
-  year    = {YYYY},
-  volume  = {XXX},
-  pages   = {XXX--XXX},
-  doi     = {10.XXXX/journal.XXXXXXX}
-}
-```
 
 ---
 
