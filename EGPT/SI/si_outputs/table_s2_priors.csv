@@ -1,0 +1,4 @@
+Parameter,Distribution,Parameters,Rationale
+R (Å),Normal truncated,μ = 6.0 Å; σ = 1.0 Å; lower = 1.0 Å,Proximity of BNC to water/proton pathway
+εr (—),Uniform,min = 2.0; max = 4.0,Protein interior on barrier timescale
+δq (Å),Uniform,min = 0.3 Å; max = 0.6 Å,Hydrogen-bonded PT TS displacement
