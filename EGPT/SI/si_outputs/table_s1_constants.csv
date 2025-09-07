@@ -1,0 +1,13 @@
+Category,Name,Symbol/Range,Value,Units,Notes
+Physical constant,kBT/h,k_B T / h,6.210e+12,s^-1,298.15 K
+Physical constant,RT,R T,0.592,kcal mol^-1,298.15 K
+Conversion,1 eV,—,23.0605,kcal mol^-1,—
+Conversion,1 MV cm^-1,—,0.010,V Å^-1,—
+Model constant,α constant,332.063,332.063,—,α = 332.063·δq/(εr·R²)
+Default parameter,ΔG‡0,ΔG‡0,15.00,kcal mol^-1,Examples
+Default parameter,R,R,4.0,Å,Examples
+Default parameter,εr,εr,4.0,—,Examples
+Default parameter,δq,δq,0.5,Å,Examples
+Grid,R grid,"R ∈ [3,10]",100,points,Heatmaps
+Grid,εr grid,"εr ∈ [2,20]",100,points,Heatmaps
+Grid,δq list,"δq ∈ {0.3,0.5,0.8}",3,values,Heatmaps

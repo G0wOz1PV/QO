@@ -1,0 +1,20 @@
+filename,description,columns,figure_table_refs
+table_s1_constants.csv,"Physical constants, conversions, defaults, grids","Category,Name,Symbol/Range,Value,Units,Notes",Table S1
+s1_cone_analytic.csv,Analytic ⟨cosθ⟩ vs θ0 for cone model,"theta0_deg,mean_projection",Figure S1A
+s1_cone_mc.csv,MC ⟨cosθ⟩ vs θ0 (cone) with 95% CI,"theta0_deg,mc_mean,mc_ci_low,mc_ci_high",Figure S1A
+s1_fisher_analytic.csv,Analytic ⟨cosθ⟩ vs κ (Fisher vMF),"kappa,mean_projection",Figure S1B
+s1_fisher_mc.csv,MC ⟨cosθ⟩ vs κ (Fisher) with 95% CI,"kappa,mc_mean,mc_ci_low,mc_ci_high",Figure S1B
+s1_isotropic.csv,Isotropic ⟨cosθ⟩,"label,mean_projection",Figure S1C
+s2_alpha_heatmap_dq_0.3.csv,α heatmap values at δq=0.3 Å,"R_Ang,epsr,alpha_kcal_per_mol_per_e",Figure S2
+s2_alpha_heatmap_dq_0.5.csv,α heatmap values at δq=0.5 Å,"R_Ang,epsr,alpha_kcal_per_mol_per_e",Figure S2
+s2_alpha_heatmap_dq_0.8.csv,α heatmap values at δq=0.8 Å,"R_Ang,epsr,alpha_kcal_per_mol_per_e",Figure S2
+s3_orientation_sampling.csv,Analytic and MC ⟨cosθ⟩ vs θ0 with CI,"theta0_deg,analytic_mean,mc_mean,mc_ci_low,mc_ci_high",Figure S3
+s4_ratio_lines.csv,"Multipolar-to-point axial field ratio vs R (d=0,1,2 Å)","R_Ang,ratio_d_0.0_Ang,ratio_d_1.0_Ang,ratio_d_2.0_Ang",Figure S4A
+s4_ratio_map.csv,"2D map of ratio vs (R,d)","R_Ang,d_Ang,ratio",Figure S4B
+s5_convergence.csv,Convergence of keff: RSE vs N for τ,"tau_s,Ntraj,keff_mean_s^-1,rse_of_mean",Figure S5
+table_s2_priors.csv,Prior distributions for CcO benchmark,"Parameter,Distribution,Parameters,Rationale",Table S2
+s6_cdf_baseline.csv,CDF data for baseline α,"alpha_sorted,cdf",Figure S6
+s6_quantiles_baseline.csv,Baseline α quantiles,"q2.5,q50,q97.5",Figure S6
+s6_cdf_narrow_R.csv,CDF for α with narrower R prior (σ=0.5 Å),"alpha_sorted,cdf",Figure S6
+s6_cdf_orientation_theta60.csv,CDF for α with orientation (θ0=60°),"alpha_sorted,cdf",Figure S6
+s6_summary_baseline.csv,"Summary: α_inferred, median, 95% PI, coverage","alpha_inferred_expt,median,p2.5,p97.5,covered",Figure S6
