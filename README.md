@@ -1,1 +1,1 @@
-# NEQO
+# QO(quantum observable)
