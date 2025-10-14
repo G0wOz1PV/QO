@@ -1,1 +1,1 @@
-# QO(quantum observable)
+# QO (Quantum Observating)
