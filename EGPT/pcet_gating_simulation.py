@@ -19,10 +19,9 @@ from scipy.stats import linregress
 # =====================================================================
 # 1. Global Settings & Constants
 # =====================================================================
-OUTPUT_DIR = "JCP_Figures_and_Data"
+OUTPUT_DIR = "Figures_and_Data"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-# JCP Publication-Quality Plot Settings
 plt.rcParams.update({
     'font.size': 14,
     'font.family': 'serif',
