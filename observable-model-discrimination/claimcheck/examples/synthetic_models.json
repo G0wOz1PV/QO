@@ -1,0 +1,45 @@
+{
+  "alpha": 0.05,
+  "family_size": 1,
+  "data_kind": "synthetic",
+  "data_origin": "Artificial counts chosen for this tutorial; no device data",
+  "question": "Which of two supplied prediction ranges is compatible with these artificial counts?",
+  "uncertainty": {
+    "status": "assumed",
+    "description": "Illustrative fixed prediction intervals; no calibration claim"
+  },
+  "settings": [
+    {
+      "id": "probe",
+      "kind": "binomial",
+      "support": [
+        -1,
+        1
+      ],
+      "shots": 100,
+      "successes": 90
+    }
+  ],
+  "candidates": [
+    {
+      "id": "A",
+      "set_semantics": "outer_box",
+      "intervals": {
+        "probe": [
+          0.6,
+          0.9
+        ]
+      }
+    },
+    {
+      "id": "B",
+      "set_semantics": "outer_box",
+      "intervals": {
+        "probe": [
+          -0.8,
+          -0.5
+        ]
+      }
+    }
+  ]
+}
