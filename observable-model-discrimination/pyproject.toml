@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "observable-claimcheck"
-version = "0.2.0"
+version = "0.2.1"
 description = "Observable-dependent model discrimination from quantum measurement records"
 readme = "README.md"
 license = {file = "LICENSES/PolyForm-Noncommercial-1.0.0.txt"}
