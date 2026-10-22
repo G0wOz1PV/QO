@@ -2,9 +2,11 @@
 
 Copyright (c) 2026 Rinka Miura. Copyright is retained by the author.
 
-- Source code and tests: [PolyForm Noncommercial 1.0.0](LICENSES/PolyForm-Noncommercial-1.0.0.txt).
-- Documentation and artificial example inputs: [CC BY-NC 4.0](LICENSES/CC-BY-NC-4.0.txt).
+- **Source code and tests:** [Apache License 2.0](LICENSES/Apache-2.0.txt).
+- **Documentation and artificial example inputs:** [Creative Commons Attribution 4.0 International](LICENSES/CC-BY-4.0.txt).
 
-These terms permit noncommercial use, subject to the respective license conditions. Commercial use requires separate permission from Rinka Miura. Include the applicable notices when redistributing; cite the software version when using it in research. Contact: acdccit5@gmail.com.
+Both licenses permit commercial and noncommercial reuse under their respective terms. Preserve the applicable license, copyright and attribution notices, and identify modifications as required by those licenses.
 
-Dependencies retain their own licenses. The separate EGPT project keeps its existing license; these terms do not replace it.
+For research using claimcheck, please cite the version in [CITATION.cff](CITATION.cff). This citation request does not add a restriction to either license.
+
+These terms apply to QMD release 0.3.0 and later releases unless otherwise stated. Earlier tagged releases retain the license notices distributed with them. Dependencies retain their own licenses. The separate EGPT project retains its existing license.

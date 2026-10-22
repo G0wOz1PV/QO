@@ -2,7 +2,8 @@ cff-version: 1.2.0
 message: "If you use claimcheck in research, cite this software version."
 title: "claimcheck: observable-dependent model discrimination"
 type: software
-version: "0.2.2"
+version: "0.3.0"
+date-released: 2026-10-22
 authors:
   - family-names: "Miura"
     given-names: "Rinka"
@@ -11,7 +12,7 @@ authors:
 abstract: "A solver-independent tool for comparing candidate prediction intervals with measurement counts and planning informative measurements."
 repository-code: "https://github.com/G0wOz1PV/QO"
 url: "https://github.com/G0wOz1PV/QO/tree/main/QMD"
-license: "PolyForm-Noncommercial-1.0.0"
+license: "Apache-2.0"
 keywords:
   - quantum simulation
   - model discrimination

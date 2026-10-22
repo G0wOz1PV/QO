@@ -9,7 +9,7 @@ Quantum Model Discrimination with `claimcheck`.
 Requires Python 3.10 or later. Run these two commands; no Git installation or device account is needed.
 
 ```sh
-python -m pip install "https://github.com/G0wOz1PV/QO/archive/refs/tags/claimcheck-v0.2.2.zip#subdirectory=QMD"
+python -m pip install "https://github.com/G0wOz1PV/QO/archive/refs/tags/claimcheck-v0.3.0.zip#subdirectory=QMD"
 python -m claimcheck --demo
 ```
 
@@ -49,4 +49,6 @@ If several candidates remain, this test cannot separate them with these inputs. 
 
 [More than one measurement, error thresholds and design](claimcheck/TUTORIAL.md) · [Full input reference and guarantees](claimcheck/README.md)
 
-Version 0.2.2 · [Citation](CITATION.cff) · [Noncommercial license](LICENSE.md)
+[Model Claim Checklist](claimcheck/REPORT_TEMPLATE.md): a short reporting template, usable with or without claimcheck.
+
+Version 0.3.0 · [Citation](CITATION.cff) · [License](LICENSE.md)

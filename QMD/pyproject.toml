@@ -4,10 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "observable-claimcheck"
-version = "0.2.2"
+version = "0.3.0"
 description = "Observable-dependent model discrimination from quantum measurement records"
 readme = "README.md"
-license = {file = "LICENSES/PolyForm-Noncommercial-1.0.0.txt"}
+license = {file = "LICENSES/Apache-2.0.txt"}
 authors = [{name = "Rinka Miura"}]
 requires-python = ">=3.10"
 dependencies = ["numpy>=1.24", "scipy>=1.10"]
@@ -17,6 +17,7 @@ claimcheck = "claimcheck.__main__:main"
 
 [tool.setuptools]
 packages = ["claimcheck"]
+license-files = ["LICENSE.md", "LICENSES/*.txt"]
 
 [tool.setuptools.package-data]
 claimcheck = ["*.json", "*.md", "examples/*.json"]
