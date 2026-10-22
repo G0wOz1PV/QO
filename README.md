@@ -13,7 +13,9 @@ Each project has its own setup instructions and license. The claimcheck examples
 
 ## Citation and reuse
 
-For claimcheck, cite the version in [CITATION.cff](CITATION.cff). Noncommercial research use is permitted under its [license terms](QMD/LICENSE.md); commercial use requires separate permission. Copyright remains with Rinka Miura.
+For claimcheck, cite the version in [CITATION.cff](CITATION.cff). Code is available under Apache-2.0; documentation and artificial examples use CC BY 4.0. Commercial and noncommercial reuse are permitted under the [license terms](QMD/LICENSE.md). Copyright remains with Rinka Miura.
+
+Use the [Model Claim Checklist](QMD/claimcheck/REPORT_TEMPLATE.md) to report assumptions and conclusions, with or without this software.
 
 The existing [EGPT license](EGPT/LICENSE.txt) remains applicable to that project.
 
