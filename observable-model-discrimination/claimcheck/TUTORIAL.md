@@ -1,40 +1,56 @@
-# A short tutorial
+# Using your own predictions
 
-The examples below use artificial counts and predictions chosen to demonstrate the interface. They are not device measurements or results of a physical simulation.
+New here? Start with the [two-command example](../README.md).
 
-## 1. Compare predictions with counts
+## Prepare the input
 
-From the package directory, run:
+Save this artificial example as `my_models.json`:
 
-```sh
-python -m claimcheck claimcheck/examples/synthetic_models.json --output result.json --report report.md
+```json
+{
+  "alpha": 0.05,
+  "data_kind": "synthetic",
+  "data_origin": "Artificial tutorial counts",
+  "uncertainty": {"status": "assumed", "description": "Illustrative error bounds"},
+  "settings": [
+    {"id": "probe", "kind": "binomial", "support": [-1, 1], "shots": 100, "successes": 90}
+  ],
+  "candidates": [
+    {"id": "A", "intervals": {"probe": [0.6, 0.9]}},
+    {"id": "B", "intervals": {"probe": [-0.8, -0.5]}}
+  ]
+}
 ```
 
-The example records 90 upper outcomes in 100 trials of a two-outcome observable with values -1 and +1. Its sample mean is 0.8. Candidate A allows means from 0.6 to 0.9; candidate B allows -0.8 to -0.5. The 95% count interval overlaps A and is disjoint from B, so A is retained and B is excluded under the example's assumptions.
-
-`result.json` contains the intervals, decisions and additive expansion thresholds. `report.md` records the question, candidate list, sampling assumptions, error bounds and result. No network service is contacted.
-
-## 2. Supply your own predictions
-
-Replace the counts and candidate intervals in the JSON file. Every candidate must have an interval for every setting. Include numerical and implementation uncertainties in those intervals before testing the data.
-
-For a probability, use support `[0, 1]`. For a Pauli observable, use `[-1, 1]`; `successes` counts the +1 outcome. For other bounded observables, use `kind: "bounded_mean"`, the sample `mean`, the `shots` and the known support.
-
-`family_size` describes the fixed collection of reported settings, including planned settings omitted from the input. Bounds and measurement choices must not be fitted to the same tested counts without a valid joint analysis.
-
-## 3. Plan measurements
+Replace the counts and prediction ranges, and update the data description. `successes` counts the upper outcome: +1 for support `[-1, 1]`, or the event of interest for `[0, 1]`. A prediction range is a range of **expected means after allowing errors**, not the range of individual outcomes. You supply it from your own physical model and error analysis.
 
 ```sh
-python -m claimcheck claimcheck/examples/synthetic_design.json --design-only --output design.json
+python -m claimcheck my_models.json
 ```
 
-Three artificial candidates have the same allowed range at `probe_1` and separated ranges at `probe_2`. The output selects `probe_2` and computes a conservative sufficient shot count for a Hoeffding-interval decision. This is not the minimum required count or a guarantee for a different decision rule.
+For multiple measurements, add entries with distinct IDs to `settings` and a matching interval for every candidate. Confidence intervals then cover all settings together. If you report only part of a fixed measurement family, set `family_size` to the full family size. Do not fit bounds or choose measurements using the counts being tested.
 
-## 4. Interpret the result
+## Read and save the result
 
-- Exclusion is conditional on valid error bounds and the specified sampling model.
-- Overlapping outer intervals give no separation certificate. Shared constraints can still distinguish the underlying models.
-- The additive threshold expands all candidate intervals in the supplied common units; equality restores box compatibility.
-- `uncertainty.status: "external_bound"` needs a separately justified bound, description and failure probability. The software records that claim but does not verify it.
+| Result | Meaning |
+|---|---|
+| `EXCLUDED` | At least one measured confidence interval is separate from the candidate's allowed range |
+| `NOT EXCLUDED` | This test has not ruled the candidate out; it is not proof that the candidate is correct |
 
-See [Input and guarantees](README.md) for the precise assumptions and [the report template](REPORT_TEMPLATE.md) for what to document.
+```sh
+python -m claimcheck my_models.json --output result.json --report report.md
+```
+
+The Markdown report starts with the decisions. The JSON also includes `common_additive_expansion_to_compatibility`: how far all of a candidate's ranges must expand to overlap the count intervals. Equality restores overlap. Compare this number only across measurements expressed in a justified common scale.
+
+All decisions assume valid prediction bounds and the stated sampling model. `assumed` records this dependence; `external_bound` records a separately justified calibration bound, but does not verify it. See [the reference](README.md) for exact guarantees and bounded-mean inputs.
+
+## Choose measurements before taking shots
+
+```sh
+python -m claimcheck --demo --design-only
+```
+
+This second artificial example recommends `probe_2` with 185 sufficient shots. To use your own predictions, copy [the design input](examples/synthetic_design.json), replace its candidate ranges, then run `python -m claimcheck my_design.json --design-only`.
+
+Shot counts use a conservative Hoeffding-interval rule under valid bounds and independent sampling. They are not minimum counts or guarantees for the separate Clopper-Pearson count test. Overlapping outer ranges do not by themselves prove physical indistinguishability.
