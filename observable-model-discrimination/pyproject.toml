@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "observable-claimcheck"
+version = "0.2.0"
+description = "Observable-dependent model discrimination from quantum measurement records"
+readme = "README.md"
+license = {file = "LICENSES/PolyForm-Noncommercial-1.0.0.txt"}
+authors = [{name = "Rinka Miura"}]
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "scipy>=1.10"]
+
+[project.scripts]
+claimcheck = "claimcheck.__main__:main"
+
+[tool.setuptools]
+packages = ["claimcheck"]
+
+[tool.setuptools.package-data]
+claimcheck = ["*.json", "*.md", "examples/*.json"]
+
+[project.urls]
+Repository = "https://github.com/G0wOz1PV/QO"
+Documentation = "https://github.com/G0wOz1PV/QO/tree/main/observable-model-discrimination/claimcheck"
