@@ -9,6 +9,8 @@ Reusable tools for quantum dynamics and measurement analysis.
 
 Each project has its own setup instructions and license. The claimcheck examples are artificial inputs for learning the interface.
 
+**Start with [claimcheck's two-command example](observable-model-discrimination/#try-it)** to see which predictions are excluded and how to read the result.
+
 ## Citation and reuse
 
 For claimcheck, cite the version in [CITATION.cff](CITATION.cff). Noncommercial research use is permitted under its [license terms](observable-model-discrimination/LICENSE.md); commercial use requires separate permission. Copyright remains with Rinka Miura.
