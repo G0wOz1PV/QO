@@ -1,0 +1,67 @@
+{
+  "alpha": 0.05,
+  "data_kind": "synthetic",
+  "data_origin": "Artificial prediction intervals; no device or simulation results",
+  "settings": [
+    {
+      "id": "probe_1",
+      "kind": "binomial",
+      "support": [
+        -1,
+        1
+      ]
+    },
+    {
+      "id": "probe_2",
+      "kind": "binomial",
+      "support": [
+        -1,
+        1
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "A",
+      "set_semantics": "outer_box",
+      "intervals": {
+        "probe_1": [
+          -0.2,
+          0.2
+        ],
+        "probe_2": [
+          -0.8,
+          -0.6
+        ]
+      }
+    },
+    {
+      "id": "B",
+      "set_semantics": "outer_box",
+      "intervals": {
+        "probe_1": [
+          -0.2,
+          0.2
+        ],
+        "probe_2": [
+          -0.2,
+          0.2
+        ]
+      }
+    },
+    {
+      "id": "C",
+      "set_semantics": "outer_box",
+      "intervals": {
+        "probe_1": [
+          -0.2,
+          0.2
+        ],
+        "probe_2": [
+          0.6,
+          0.8
+        ]
+      }
+    }
+  ]
+}
