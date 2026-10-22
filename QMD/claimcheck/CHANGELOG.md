@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.0
+
+- Permit commercial and noncommercial reuse: Apache-2.0 for code/tests and CC BY 4.0 for documentation/artificial examples.
+- Provide a concise Model Claim Checklist and copyable reporting template.
+- Include both full license texts in installable distributions.
+- Preserve numerical calculations, command-line options and JSON report structure.
+
 ## 0.2.2
 
 - Shorten the public project directory to QMD (Quantum Model Discrimination).
