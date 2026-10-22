@@ -1,4 +1,6 @@
-# claimcheck
+# QMD
+
+Quantum Model Discrimination with `claimcheck`.
 
 **Which models can your quantum measurements rule out?** Supply measurement counts and each model's allowed prediction range, including implementation errors. claimcheck compares them with a confidence interval for the measured mean.
 
@@ -7,7 +9,7 @@
 Requires Python 3.10 or later. Run these two commands; no Git installation or device account is needed.
 
 ```sh
-python -m pip install "https://github.com/G0wOz1PV/QO/archive/refs/tags/claimcheck-v0.2.1.zip#subdirectory=observable-model-discrimination"
+python -m pip install "https://github.com/G0wOz1PV/QO/archive/refs/tags/claimcheck-v0.2.2.zip#subdirectory=QMD"
 python -m claimcheck --demo
 ```
 
@@ -47,4 +49,4 @@ If several candidates remain, this test cannot separate them with these inputs. 
 
 [More than one measurement, error thresholds and design](claimcheck/TUTORIAL.md) · [Full input reference and guarantees](claimcheck/README.md)
 
-Version 0.2.1 · [Citation](CITATION.cff) · [Noncommercial license](LICENSE.md)
+Version 0.2.2 · [Citation](CITATION.cff) · [Noncommercial license](LICENSE.md)
