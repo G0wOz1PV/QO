@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "observable-claimcheck"
-version = "0.2.1"
+version = "0.2.2"
 description = "Observable-dependent model discrimination from quantum measurement records"
 readme = "README.md"
 license = {file = "LICENSES/PolyForm-Noncommercial-1.0.0.txt"}
@@ -23,4 +23,4 @@ claimcheck = ["*.json", "*.md", "examples/*.json"]
 
 [project.urls]
 Repository = "https://github.com/G0wOz1PV/QO"
-Documentation = "https://github.com/G0wOz1PV/QO/tree/main/observable-model-discrimination/claimcheck"
+Documentation = "https://github.com/G0wOz1PV/QO/tree/main/QMD/claimcheck"
