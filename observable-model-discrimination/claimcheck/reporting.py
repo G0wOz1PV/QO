@@ -4,6 +4,53 @@ import json
 from .version import __version__
 
 
+def console_summary(problem, result, design_only=False):
+    """Show decisions first; keep detailed assumptions in the full report."""
+    lines = []
+    if problem.get('data_kind') == 'synthetic':
+        lines.append('Artificial example (no device data)')
+    if design_only:
+        lines.append('Suggested measurements:')
+        for choice in result['greedy_cover']:
+            lines.append(f"  {choice['setting']}: {choice['hoeffding_sufficient_shots']} sufficient shots (Hoeffding rule)")
+        unresolved = sum(p['diagnosis'] != 'separated_by_supplied_intervals' for p in result['pairs'])
+        lines.append(f'Pairs without a separation guarantee: {unresolved} / {len(result["pairs"])}')
+        lines.append('Shot bounds assume valid prediction ranges and independent shots within each setting.')
+        lines.append('This is a sufficient plan, not a minimum shot budget. Use --output for pairwise details.')
+        return '\n'.join(lines)
+
+    confidence = 100 * (1 - result['alpha_observation'])
+    family = result['family_size']
+    label = f'{confidence:g}% count confidence'
+    if family > 1:
+        label += f' (simultaneous over {family} settings)'
+    lines.append(label)
+    for setting in problem['settings']:
+        lo, hi = setting['support']
+        mean = lo + (hi-lo)*setting['successes']/setting['shots'] if setting['kind'] == 'binomial' else setting['mean']
+        a, b = result['confidence_intervals'][setting['id']]
+        lines.append(f"  {setting['id']}: mean {mean:.3f} | CI [{a:.3f}, {b:.3f}]")
+    lines.append('')
+    for decision, candidate in zip(result['decisions'], problem['candidates']):
+        status = 'EXCLUDED' if decision['excluded'] else 'NOT EXCLUDED'
+        line = f"{decision['candidate']}: {status}"
+        if len(problem['settings']) == 1:
+            a, b = candidate['intervals'][problem['settings'][0]['id']]
+            line += f' | allowed prediction [{a:.3f}, {b:.3f}]'
+        elif decision['excluded']:
+            line += ' | separated at ' + ', '.join(decision['witness_settings'])
+        lines.append(line)
+    lines += ['', 'Exclusion assumes valid prediction ranges and independent shots within each setting.',
+              'Ranges and measurements must be fixed before testing these counts.',
+              'NOT EXCLUDED does not mean proven correct.']
+    combined = result['unconditional_failure_bound_if_external_statement_valid']
+    if combined is not None:
+        lines.append(f'Including the supplied calibration failure bound: total failure <= {combined:.4g} (if that bound is valid).')
+    if not result['retained_candidates']:
+        lines.append('No candidate remains: check the candidate set, error bounds and sampling assumptions.')
+    return '\n'.join(lines)
+
+
 def evidence_report(problem, result):
     """Report supplied provenance without inferring calibration or physical truth."""
     origin = problem.get('data_origin', 'Not supplied')
@@ -34,6 +81,11 @@ def markdown_report(report):
     def clean(value): return str(value).replace('|','\\|').replace('\n',' ')
     e,c = report['evidence'],report['confidence']
     lines=['# Model-discrimination report','',
+           '| Candidate | Result |','|---|---|']
+    for d in report['decision']:
+        lines.append('| '+clean(d['candidate'])+' | '+('EXCLUDED' if d['excluded'] else 'NOT EXCLUDED')+' |')
+    lines += ['', 'Exclusion assumes valid prediction ranges and the stated sampling conditions. NOT EXCLUDED does not mean proven correct.',
+           '', '## Inputs and assumptions', '',
            '| Field | Value |','|---|---|',
            '| Question | '+clean(report['question'])+' |',
            '| Evidence | '+clean(f"{e['kind']}; {e['settings']} settings; {e['shots']} shots. {e['provenance']}")+' |',
