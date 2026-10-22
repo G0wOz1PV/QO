@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.2
+
+- Shorten the public project directory to QMD (Quantum Model Discrimination).
+- Update installation and documentation links; commands and calculations are unchanged.
+
 ## 0.2.1
 
 - Run bundled artificial examples with `--demo` from any directory.
